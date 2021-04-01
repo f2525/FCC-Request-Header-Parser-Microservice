@@ -1,3 +1,6 @@
+//git link = https://github.com/f2525/FCC-Request-Header-Parser-Microservice
+//heroku link = 
+
 const { response } = require("express");
 const express = require("express");
 const app = express();
@@ -24,6 +27,8 @@ app.get("/api/whoami", (req,res)=>{
     });
 })
 
-app.listen(3000, ()=>{
-    console.log("app is running on port 3000");
-})
+//kalau heroku dia pake environment variable untuk PORTnya, jadi harus begini app.listennya
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
