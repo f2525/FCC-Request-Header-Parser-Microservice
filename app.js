@@ -18,10 +18,7 @@ app.use("/static", express.static("public"));
 app.get("/", (req,res)=>{
     res.sendFile(__dirname + "/index.html");
 })
-//tes
-app.get("/tes", (req,res)=>{
-    res.send(req.headers);
-})
+
 //user-agent
 //accept-language
 app.get("/api/whoami", (req,res)=>{
